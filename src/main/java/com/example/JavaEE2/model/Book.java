@@ -1,15 +1,16 @@
 package com.example.JavaEE2.model;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@ToString
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Book {
-
-    String title;
-    String isbn;
-    String author;
+    private String isbn;
+    private String title;
+    private String author;
 }
