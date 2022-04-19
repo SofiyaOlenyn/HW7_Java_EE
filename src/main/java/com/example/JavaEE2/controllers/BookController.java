@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Controller
 public class BookController {
@@ -42,7 +42,14 @@ public class BookController {
             return ResponseEntity.status(200)
                     .body(bookService.getAllBooks());
         }
-        ArrayList<Book> result = bookService.searchBooks(search);
+        List<Book> result = bookService.searchBooks(search);
         return ResponseEntity.ok(result);
+    }
+
+    @GetMapping("/book/{isbn}")
+    public String getBook(@PathVariable String isbn, Model model) {
+        Book book = bookService.getBookByIsbn(isbn);
+        model.addAttribute("book", book);
+        return "book";
     }
 }

@@ -1,4 +1,4 @@
-package com.example.JavaEE2;
+package com.example.JavaEE2.controller;
 
 import com.example.JavaEE2.controllers.BookController;
 import com.example.JavaEE2.model.Book;

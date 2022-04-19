@@ -32,6 +32,7 @@ $(document).ready(function () {
             "<th>Isbn</th>" +
             "<th>Title</th>" +
             "<th>Author</th>" +
+            "<th></th>"+
             "</thead>" +
             "<tbody>";
 
@@ -40,6 +41,7 @@ $(document).ready(function () {
                 "<td>" + books[i].isbn + "</td>" +
                 "<td>" + books[i].title + "</td>" +
                 "<td>" + books[i].author + "</td>" +
+                "<td><a href=/book/"+books[i].isbn+">View</a></td>"+
                 "</tr>";
         }
         res += "</tbody></table>";
