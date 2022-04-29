@@ -48,7 +48,7 @@ public class BookRepositoryTest {
         em.persist(book3);
         em.flush();
 
-        List<Book> result = bookRepository.findAllByTittleOrAuthorOrIsbn("author");
+        List<Book> result = bookRepository.findAllByTitleAndIsbn("author");
 
         Assert.assertEquals(result,List.of(book1, book2));
 
