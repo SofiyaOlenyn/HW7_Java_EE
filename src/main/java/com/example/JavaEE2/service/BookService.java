@@ -42,7 +42,7 @@ public class BookService {
 
     @Transactional
     public List<Book> searchBooks(final String s) {
-        return bookRepository.findAllByTittleOrAuthorOrIsbn(s);
+        return bookRepository.findAllByTitleAndIsbn(s);
     }
 
     @Transactional
