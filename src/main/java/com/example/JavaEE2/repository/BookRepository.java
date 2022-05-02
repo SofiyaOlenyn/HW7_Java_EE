@@ -11,5 +11,6 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Integer> {
     Book findByIsbn(String isbn);
 
-    List<Book> findAllByTitleAndIsbn( String search);
+    @Query("SELECT b FROM Book b WHERE lower(b.title) LIKE %:search% OR lower(b.author) LIKE %:search% OR lower(b.isbn) LIKE %:search%")
+    List<Book> findAllWhereTitleLikeOrAuthorLikeOrIsbnLike(@Param("search") String search);
 }
